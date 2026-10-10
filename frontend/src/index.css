@@ -1,0 +1,64 @@
+@import "tailwindcss";
+
+@theme {
+  --color-brand-500: #06b6d4;
+}
+
+@layer base {
+  body {
+    @apply bg-slate-950 text-slate-100 antialiased font-sans;
+    min-height: 100vh;
+  }
+
+  ::selection {
+    background-color: #06b6d4;
+    color: white;
+  }
+
+  /* Custom scrollbar for data tables and logs */
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: #0f172a;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #334155;
+    border-radius: 3px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: #475569;
+  }
+}
+
+.glass-card {
+  @apply bg-slate-900/80 backdrop-blur-md border border-slate-800/80 rounded-xl shadow-lg;
+}
+
+.glass-card-hover {
+  @apply bg-slate-900/80 backdrop-blur-md border border-slate-800/80 rounded-xl shadow-lg transition-all duration-200;
+}
+
+.glass-card-hover:hover {
+  @apply border-slate-700 shadow-xl;
+}
+
+.kpi-gradient-border {
+  position: relative;
+}
+
+.kpi-gradient-border::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, #3b82f6, #06b6d4);
+  border-top-left-radius: 0.75rem;
+  border-top-right-radius: 0.75rem;
+}
